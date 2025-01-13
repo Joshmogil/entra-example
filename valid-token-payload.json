@@ -1,0 +1,20 @@
+{
+    "aud": "api://416154a7-89e5-41d2-9c24-541a46a6f8a0",
+    "iss": "https://sts.windows.net/ea3fe077-4875-4e38-9b37-5630fdd86732/",
+    "iat": 1736791475,
+    "nbf": 1736791475,
+    "exp": 1736795375,
+    "aio": "k2BgYDh97Ul1oVFTEfumuQ1zVuQdBQA=",
+    "appid": "416154a7-89e5-41d2-9c24-541a46a6f8a0",
+    "appidacr": "1",
+    "idp": "https://sts.windows.net/ea3fe077-4875-4e38-9b37-5630fdd86732/",
+    "oid": "29f484e0-f3c1-4e94-8d26-1e4e6fa42f79",
+    "rh": "1.AW8Bd-A_6nVIOE6bN1Yw_dhnMqdUYUHlidJBnCRUGkam-KBwAQBvAQ.",
+    "roles": [
+      "Test.Write"
+    ],
+    "sub": "29f484e0-f3c1-4e94-8d26-1e4e6fa42f79",
+    "tid": "ea3fe077-4875-4e38-9b37-5630fdd86732",
+    "uti": "eOvn8KdFYkGA3HRy-wFjAA",
+    "ver": "1.0"
+  }
