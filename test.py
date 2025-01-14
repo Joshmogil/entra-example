@@ -20,6 +20,9 @@ client_secret = os.environ.get('CLIENT_SECRET')
 scope = 'api://416154a7-89e5-41d2-9c24-541a46a6f8a0/.default'
 token_url = f'https://login.microsoftonline.com/{tenant_id}/oauth2/v2.0/token'
 jwks_url = f'https://login.microsoftonline.com/{tenant_id}/discovery/v2.0/keys'
+#OR
+jwks__common_url = f'https://login.microsoftonline.com/common/discovery/v2.0/keys'
+
 
 # Function to get an access token
 def get_access_token():

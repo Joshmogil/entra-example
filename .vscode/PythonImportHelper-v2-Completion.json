@@ -1,0 +1,162 @@
+[
+    {
+        "label": "requests",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "requests",
+        "description": "requests",
+        "detail": "requests",
+        "documentation": {}
+    },
+    {
+        "label": "ssl",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "ssl",
+        "description": "ssl",
+        "detail": "ssl",
+        "documentation": {}
+    },
+    {
+        "label": "datetime",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "jwt",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "jwt",
+        "description": "jwt",
+        "detail": "jwt",
+        "documentation": {}
+    },
+    {
+        "label": "PyJWKClient",
+        "importPath": "jwt",
+        "description": "jwt",
+        "isExtraImport": true,
+        "detail": "jwt",
+        "documentation": {}
+    },
+    {
+        "label": "dotenv",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "dotenv",
+        "description": "dotenv",
+        "detail": "dotenv",
+        "documentation": {}
+    },
+    {
+        "label": "os",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "os",
+        "description": "os",
+        "detail": "os",
+        "documentation": {}
+    },
+    {
+        "label": "certifi",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "certifi",
+        "description": "certifi",
+        "detail": "certifi",
+        "documentation": {}
+    },
+    {
+        "label": "get_access_token",
+        "kind": 2,
+        "importPath": "test",
+        "description": "test",
+        "peekOfCode": "def get_access_token():\n    headers = {'Content-Type': 'application/x-www-form-urlencoded'}\n    data = {\n        'client_id': client_id,\n        'client_secret': client_secret,\n        'scope': scope,\n        'grant_type': 'client_credentials'\n    }\n    response = requests.post(token_url, headers=headers, data=data)\n    if response.status_code == 200:",
+        "detail": "test",
+        "documentation": {}
+    },
+    {
+        "label": "verify_access_token",
+        "kind": 2,
+        "importPath": "test",
+        "description": "test",
+        "peekOfCode": "def verify_access_token(access_token):\n    try:\n        # Create a custom SSLContext\n        ssl_context = ssl.create_default_context(cafile=certifi.where())\n        # Create a custom requests session with the SSLContext\n        # Use PyJWKClient with the custom session\n        jwk_client = PyJWKClient(jwks_url, ssl_context=ssl_context)\n        signing_key = jwk_client.get_signing_key_from_jwt(access_token)\n        # Decode and validate the token\n        decoded_token = jwt.decode(",
+        "detail": "test",
+        "documentation": {}
+    },
+    {
+        "label": "loaded",
+        "kind": 5,
+        "importPath": "test",
+        "description": "test",
+        "peekOfCode": "loaded = dotenv.load_dotenv(\".env\")\nif not loaded:\n    print(\"No .env file loaded\")\n    raise Exception(\"No .env file loaded, please create one with CLIENT_SECRET\")\n# Constants\ntenant_id = 'ea3fe077-4875-4e38-9b37-5630fdd86732'\nclient_id = '416154a7-89e5-41d2-9c24-541a46a6f8a0'\nclient_secret = os.environ.get('CLIENT_SECRET')\nscope = 'api://416154a7-89e5-41d2-9c24-541a46a6f8a0/.default'\ntoken_url = f'https://login.microsoftonline.com/{tenant_id}/oauth2/v2.0/token'",
+        "detail": "test",
+        "documentation": {}
+    },
+    {
+        "label": "tenant_id",
+        "kind": 5,
+        "importPath": "test",
+        "description": "test",
+        "peekOfCode": "tenant_id = 'ea3fe077-4875-4e38-9b37-5630fdd86732'\nclient_id = '416154a7-89e5-41d2-9c24-541a46a6f8a0'\nclient_secret = os.environ.get('CLIENT_SECRET')\nscope = 'api://416154a7-89e5-41d2-9c24-541a46a6f8a0/.default'\ntoken_url = f'https://login.microsoftonline.com/{tenant_id}/oauth2/v2.0/token'\njwks_url = f'https://login.microsoftonline.com/{tenant_id}/discovery/v2.0/keys'\n#OR\njwks__common_url = f'https://login.microsoftonline.com/common/discovery/v2.0/keys'\n# Function to get an access token\ndef get_access_token():",
+        "detail": "test",
+        "documentation": {}
+    },
+    {
+        "label": "client_id",
+        "kind": 5,
+        "importPath": "test",
+        "description": "test",
+        "peekOfCode": "client_id = '416154a7-89e5-41d2-9c24-541a46a6f8a0'\nclient_secret = os.environ.get('CLIENT_SECRET')\nscope = 'api://416154a7-89e5-41d2-9c24-541a46a6f8a0/.default'\ntoken_url = f'https://login.microsoftonline.com/{tenant_id}/oauth2/v2.0/token'\njwks_url = f'https://login.microsoftonline.com/{tenant_id}/discovery/v2.0/keys'\n#OR\njwks__common_url = f'https://login.microsoftonline.com/common/discovery/v2.0/keys'\n# Function to get an access token\ndef get_access_token():\n    headers = {'Content-Type': 'application/x-www-form-urlencoded'}",
+        "detail": "test",
+        "documentation": {}
+    },
+    {
+        "label": "client_secret",
+        "kind": 5,
+        "importPath": "test",
+        "description": "test",
+        "peekOfCode": "client_secret = os.environ.get('CLIENT_SECRET')\nscope = 'api://416154a7-89e5-41d2-9c24-541a46a6f8a0/.default'\ntoken_url = f'https://login.microsoftonline.com/{tenant_id}/oauth2/v2.0/token'\njwks_url = f'https://login.microsoftonline.com/{tenant_id}/discovery/v2.0/keys'\n#OR\njwks__common_url = f'https://login.microsoftonline.com/common/discovery/v2.0/keys'\n# Function to get an access token\ndef get_access_token():\n    headers = {'Content-Type': 'application/x-www-form-urlencoded'}\n    data = {",
+        "detail": "test",
+        "documentation": {}
+    },
+    {
+        "label": "scope",
+        "kind": 5,
+        "importPath": "test",
+        "description": "test",
+        "peekOfCode": "scope = 'api://416154a7-89e5-41d2-9c24-541a46a6f8a0/.default'\ntoken_url = f'https://login.microsoftonline.com/{tenant_id}/oauth2/v2.0/token'\njwks_url = f'https://login.microsoftonline.com/{tenant_id}/discovery/v2.0/keys'\n#OR\njwks__common_url = f'https://login.microsoftonline.com/common/discovery/v2.0/keys'\n# Function to get an access token\ndef get_access_token():\n    headers = {'Content-Type': 'application/x-www-form-urlencoded'}\n    data = {\n        'client_id': client_id,",
+        "detail": "test",
+        "documentation": {}
+    },
+    {
+        "label": "token_url",
+        "kind": 5,
+        "importPath": "test",
+        "description": "test",
+        "peekOfCode": "token_url = f'https://login.microsoftonline.com/{tenant_id}/oauth2/v2.0/token'\njwks_url = f'https://login.microsoftonline.com/{tenant_id}/discovery/v2.0/keys'\n#OR\njwks__common_url = f'https://login.microsoftonline.com/common/discovery/v2.0/keys'\n# Function to get an access token\ndef get_access_token():\n    headers = {'Content-Type': 'application/x-www-form-urlencoded'}\n    data = {\n        'client_id': client_id,\n        'client_secret': client_secret,",
+        "detail": "test",
+        "documentation": {}
+    },
+    {
+        "label": "jwks_url",
+        "kind": 5,
+        "importPath": "test",
+        "description": "test",
+        "peekOfCode": "jwks_url = f'https://login.microsoftonline.com/{tenant_id}/discovery/v2.0/keys'\n#OR\njwks__common_url = f'https://login.microsoftonline.com/common/discovery/v2.0/keys'\n# Function to get an access token\ndef get_access_token():\n    headers = {'Content-Type': 'application/x-www-form-urlencoded'}\n    data = {\n        'client_id': client_id,\n        'client_secret': client_secret,\n        'scope': scope,",
+        "detail": "test",
+        "documentation": {}
+    },
+    {
+        "label": "jwks__common_url",
+        "kind": 5,
+        "importPath": "test",
+        "description": "test",
+        "peekOfCode": "jwks__common_url = f'https://login.microsoftonline.com/common/discovery/v2.0/keys'\n# Function to get an access token\ndef get_access_token():\n    headers = {'Content-Type': 'application/x-www-form-urlencoded'}\n    data = {\n        'client_id': client_id,\n        'client_secret': client_secret,\n        'scope': scope,\n        'grant_type': 'client_credentials'\n    }",
+        "detail": "test",
+        "documentation": {}
+    }
+]
